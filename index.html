@@ -26,7 +26,7 @@
   --mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',monospace;
   --sans:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Pretendard','Malgun Gothic',sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,47,168,.10)}
 html{-webkit-text-size-adjust:100%}
 body{
   background:var(--bg);color:var(--ink);
@@ -209,15 +209,15 @@ form.gbf{max-width:640px;display:flex;flex-direction:column;gap:12px;margin-top:
 
 /* ── 좁은 화면 ─────────────────────────── */
 @media(max-width:620px){
-  header{padding:28px 20px 16px}
+  header{padding:26px 20px 14px;flex-direction:column;align-items:center;gap:8px;text-align:center}
   header::after{left:20px;right:20px}
-  .mark{font-size:13.5px}
-  nav.top{width:100%;gap:14px;font-size:12.5px;letter-spacing:.1em}
-  nav.top a{padding:6px 2px}
-  main{padding:34px 20px 70px}
+  .mark{font-size:14px}
+  nav.top{width:100%;justify-content:center;gap:15px;font-size:12.5px;letter-spacing:.1em}
+  nav.top a{padding:7px 3px}
+  main{padding:32px 20px 70px}
   .ghost{font-size:44vw;top:110px;-webkit-text-stroke-color:rgba(0,47,168,.12)}
   #mist .fog{filter:blur(46px)}
-  .row{grid-template-columns:1fr auto}
+  .row{grid-template-columns:1fr auto;padding:16px 2px}
   .row .d{grid-column:1}
   .row .g{grid-column:2;justify-self:end}
   .row .t{grid-column:1 / -1;font-size:16px}
@@ -310,6 +310,57 @@ const PROFILE = {
 ──────────────────────────────────────────────────────── */
 
 const WORKS = [
+
+{
+  id: "p-001",
+  section: "poem",
+  title: "유리의 안쪽",
+  date: "2026-07-01",
+  meta: "",
+  link: "",
+  note: "예시 작품입니다. 본인의 시로 바꿔 주세요.",
+  body: `빛은 유리를 통과하면서
+조금 늦게 도착한다
+
+늦게 온 빛이 책상 위에
+네모난 오후를 내려놓는다
+
+나는 그 안에 손을 넣어 본다
+따뜻한 것은 빛인가 시간인가
+
+창밖에서 새 한 마리
+제 그림자를 끌고 지나간다
+
+유리의 안쪽에서 나는
+바깥을 오래 읽는 사람
+
+읽다가 만 페이지처럼
+커튼이 접힌다`
+},
+
+{
+  id: "e-001",
+  section: "prose",
+  title: "이미지의 호흡에 관하여",
+  date: "2026-06-20",
+  meta: "",
+  link: "",
+  note: "예시 글입니다. 본인의 산문이나 비평으로 바꿔 주세요.",
+  body: `시에서 이미지는 정지된 그림이 아니라 호흡의 단위다. 한 행이 끝나는 자리에서 이미지는 잠시 숨을 참고, 행이 바뀌는 순간 다음 장면으로 몸을 옮긴다. 그러므로 행갈이를 다듬는 일은 화면을 편집하는 일이라기보다 숨의 길이를 재는 일에 가깝다.
+
+우리는 시를 눈으로 읽는다고 믿지만, 좋은 시는 먼저 호흡으로 읽힌다. 이미지가 배치되는 자리와 숨이 놓이는 자리가 겹칠 때, 장면은 비로소 움직이기 시작한다.`
+},
+
+{
+  id: "r-001",
+  section: "research",
+  title: "시선의 위상학 — 1930년대 모더니즘 시의 시각성 연구",
+  date: "2026-06-05",
+  meta: "학술대회 발제문 · 2026",
+  link: "",
+  note: "초록 예시입니다. 실제 연구의 초록으로 바꿔 주세요.",
+  body: `이 연구는 1930년대 모더니즘 시에 나타난 시선의 구조를 위상학적 관점에서 다시 읽는다. 보는 주체와 보이는 대상 사이의 거리 감각이 시적 공간을 어떻게 조직하는지, 근대 도시의 시각 체제가 시의 형식에 남긴 흔적은 무엇인지 검토한다.`
+},
 
 {
   id: "p-002",
