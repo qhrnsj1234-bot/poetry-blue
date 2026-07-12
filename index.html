@@ -239,158 +239,111 @@ form.gbf{max-width:640px;display:flex;flex-direction:column;gap:12px;margin-top:
   footer::before{left:20px;right:20px}
 }
 
-/* ── 2026 editorial refinement ──────────────────────────
-   문예지의 표지와 현대 작가 포트폴리오에서 가져온,
-   짙은 남색·크림 대비와 선명한 활자 위계입니다. */
+/* ── 픽셀 세계: 들판의 정서로 맞춘 실내 ──────────────
+   대화창의 두꺼운 잉크 테두리, 딱 떨어지는 그림자,
+   둥근모꼴 라벨. 본문 활자만은 시를 위해 명조를 지킨다. */
 :root{
-  --bg:#f3f0e7;
-  --ink:#10213f;
-  --sub:#647086;
-  --line:rgba(16,33,63,.16);
-  --blue:#0d3275;
-  --blue2:#2c5eb8;
+  --bg:#e9f5fd;
+  --paper:#fffdf2;
+  --ink:#1b2333;
+  --sub:#5c6b80;
+  --line:#1b2333;
+  --blue:#1a5fd0;
+  --blue2:#3f83f2;
+  --grass:#58b849;
 }
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-size:15px;
-  line-height:1.75;
-}
-body::before{
-  background:
-    radial-gradient(760px 660px at -8% 4%, rgba(13,50,117,.18), transparent 66%),
-    radial-gradient(620px 500px at 108% 105%, rgba(37,83,166,.13), transparent 64%),
-    linear-gradient(90deg, rgba(13,50,117,.045) 1px, transparent 1px);
-  background-size:auto,auto,92px 100%;
-}
-body::after{opacity:.72}
-header{
-  max-width:1120px;
-  padding:30px 32px 21px;
-  border-bottom-color:rgba(16,33,63,.28);
-}
-header::after{
-  left:32px;right:32px;bottom:-5px;height:2px;
-  background:linear-gradient(90deg,var(--blue) 0 23%,rgba(13,50,117,.16) 23% 100%);
-}
-.mark{
-  font-size:13px;
-  font-weight:500;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-}
-.mark span{display:inline-block;margin:0 .18em;color:var(--blue2)}
-nav.top{gap:25px;font-family:var(--mono);font-size:11px;letter-spacing:.16em}
-nav.top a{position:relative;padding:4px 0}
-nav.top a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--blue);transition:width .22s ease}
-nav.top a:hover::after,nav.top a.on::after{width:100%}
-main{max-width:1120px;padding:54px 32px 100px}
-footer{max-width:1120px;padding:21px 32px 54px;color:rgba(243,240,231,.74)}
-footer::before{left:0;right:0;top:0;height:100%;z-index:-1;background:#10213f}
+body{background:var(--bg);color:var(--ink)}
+body::before{background:linear-gradient(180deg,#cfeafd 0%,rgba(233,245,253,0) 260px)}
+body::after{opacity:.35}
+header{max-width:1120px;padding:24px 32px 16px;border-bottom:3px solid var(--ink)}
+header::after{display:none}
+main{max-width:1120px;padding:50px 32px 96px}
+footer{max-width:none;width:100%;margin:0;padding:18px 32px 36px;
+  background:var(--grass);border-top:3px solid var(--ink);
+  color:#f3ffe9;font-family:'DungGeunMo',var(--mono);font-size:12px}
+footer::before{display:none}
+#hits{color:#eaffdd}
 
-.k{font-size:10px;letter-spacing:.18em}
-.page-note{font-family:var(--serif);font-size:15px;line-height:1.9;color:#53627a}
-h1.page,.w-title{font-weight:400;letter-spacing:-.025em}
-.ghost{right:3vw;top:84px;font-size:min(32vw,330px);-webkit-text-stroke:1px rgba(13,50,117,.14)}
-.rows{border-top-color:var(--ink)}
-.row{grid-template-columns:112px 1fr auto;gap:8px 24px;padding:19px 0;border-bottom-color:var(--line)}
-.row .d,.row .g{font-size:10.5px;letter-spacing:.1em}
-.row .t{font-size:18px;line-height:1.55}
-.row:hover .t{transform:translateX(7px);color:var(--blue)}
+.k{font-family:'DungGeunMo',var(--mono);font-size:13px;letter-spacing:.06em;color:var(--blue)}
+.page-note{font-family:var(--serif);font-size:14.5px;line-height:1.9;color:var(--sub)}
+h1.page{font-family:'DungGeunMo',var(--mono);font-weight:400;font-size:26px;letter-spacing:.04em}
+.ghost{top:92px;-webkit-text-stroke:2px rgba(26,95,208,.14)}
 
-/* 첫 화면: 초상을 표지처럼 두고, 이름을 편집 면의 제목처럼 배치 */
-.profile{position:relative;text-align:left;max-width:970px;margin:0 auto;padding-top:8px}
-.pf-o{width:min(31vw,330px);height:min(41vw,430px);min-height:340px;margin:0;z-index:1}
-.pf-photo{
-  position:relative;z-index:2;width:100%;height:100%;
-  border-radius:170px 170px 5px 5px;
-  border:9px solid rgba(243,240,231,.84);
-  object-position:center 28%;
-  filter:grayscale(1) contrast(1.14);
-  box-shadow:18px 18px 0 rgba(13,50,117,.13);
-}
-.rg{border-color:rgba(13,50,117,.34);animation:none}
-.r1{width:calc(100% + 34px);height:calc(100% + 34px);border-radius:180px 180px 8px 8px}
-.r2{width:calc(100% + 68px);height:calc(100% + 68px);border-radius:195px 195px 12px 12px;border-color:rgba(13,50,117,.18)}
-.r3{width:calc(100% + 104px);height:calc(100% + 104px);border-radius:210px 210px 16px 16px;border-color:rgba(13,50,117,.1)}
-.pf-names{margin:0}
-.pf-name{font-size:23px;letter-spacing:.08em;margin-bottom:10px}
-.pf-name.latin{font-size:12px;letter-spacing:.28em;color:var(--blue);margin-top:20px}
-.pf-roles{margin:0}
-.pf-role{font-size:15px;letter-spacing:.11em}
-.pf-mail a{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;border-bottom:1px solid rgba(13,50,117,.45)}
-.pf-links{justify-content:flex-start;gap:14px;margin:0}
-.pf-links a{width:34px;height:34px;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;transition:background .18s,color .18s,border-color .18s}
-.pf-links a:hover{background:var(--blue);border-color:var(--blue);color:var(--bg)}
-.pf-links svg{width:16px;height:16px}
+/* 목록 = 게임 메뉴 */
+.rows{border:none;display:flex;flex-direction:column;gap:10px}
+.row{grid-template-columns:112px 1fr auto;gap:6px 20px;padding:13px 16px;
+  background:var(--paper);border:2px solid var(--ink);
+  box-shadow:3px 3px 0 rgba(27,35,51,.9);
+  transition:transform .12s ease,box-shadow .12s ease}
+.row:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 rgba(27,35,51,.9)}
+.row .d,.row .g{font-family:'DungGeunMo',var(--mono);font-size:12px;letter-spacing:.04em}
+.row .t{font-family:var(--serif);font-size:17px;transition:color .12s ease}
+.row .t::before{content:"▶ ";font-family:'DungGeunMo',var(--mono);font-size:12px;
+  color:var(--blue);opacity:0;transition:opacity .12s ease}
+.row:hover .t{transform:none;color:var(--blue)}
+.row:hover .t::before{opacity:1}
 
-.reader{max-width:680px}
-.crumb{font-size:10.5px;letter-spacing:.15em}
-.w-title{font-size:31px;line-height:1.45}
-.w-meta{font-size:10.5px;letter-spacing:.08em}
-.w-body.poem{font-size:18px;line-height:2.25}
-.w-body.prose p{font-size:17px;line-height:2.08}
-.facts{border-top-color:var(--ink)}
-.fact{grid-template-columns:88px 1fr;padding:17px 0;border-bottom-color:var(--line)}
-.fact .fk{font-size:10.5px;letter-spacing:.1em}
-.fact .fv{font-size:16px}
-.grp{margin-top:58px}
-.grp-it{padding:12px 0;border-bottom-color:var(--line)}
-.grp-it .tx{font-size:15.5px}
-.stk{width:48px;height:48px;box-shadow:4px 4px 0 rgba(13,50,117,.12)}
-.gbf input,.gbf textarea{background:rgba(255,255,255,.42);border-color:var(--line)}
-.gbf button{background:var(--blue);border-color:var(--blue)}
+/* 읽기 = 양피지 대화창 */
+.reader{max-width:720px;background:var(--paper);border:2px solid var(--ink);
+  box-shadow:5px 5px 0 rgba(27,35,51,.9);padding:44px 46px 54px}
+.crumb{font-family:'DungGeunMo',var(--mono);font-size:12px}
+.w-title{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.5}
+.w-meta{font-family:'DungGeunMo',var(--mono);font-size:12px;letter-spacing:.05em}
+.w-body.poem{font-size:17.5px;line-height:2.25}
+.w-body.prose p{font-size:16.5px;line-height:2.08}
+.w-note{border-top:2px dashed rgba(27,35,51,.3);font-family:var(--serif)}
+.pn{font-family:'DungGeunMo',var(--mono);font-size:13px}
+.wlink{font-family:'DungGeunMo',var(--mono);border-bottom:2px solid var(--blue)}
 
-@media(min-width:761px){
-  .profile{
-    display:grid;
-    grid-template-columns:minmax(270px,330px) minmax(300px,1fr);
-    grid-template-rows:auto auto auto auto;
-    column-gap:clamp(88px,13vw,180px);
-    align-items:start;
-    min-height:530px;
-  }
-  .profile::before{
-    content:"POETRY / PROSE / RESEARCH";
-    position:absolute;right:1px;top:0;color:var(--blue);font-family:var(--mono);
-    font-size:10px;letter-spacing:.18em;writing-mode:vertical-rl;
-  }
-  .pf-o{grid-row:1 / 5;align-self:center}
-  .pf-names{grid-column:2;grid-row:1;padding-top:66px}
-  .pf-name:first-child{font-size:42px;line-height:1.25;letter-spacing:-.05em;margin-bottom:6px}
-  .pf-name:nth-child(2){font-size:18px;color:var(--sub);margin-bottom:0}
-  .pf-roles{grid-column:2;grid-row:2;margin-top:54px}
-  .pf-role{font-size:17px}
-  .pf-mail{grid-column:2;grid-row:3;margin-top:72px}
-  .pf-links{grid-column:2;grid-row:4;margin-top:18px}
-}
+/* 소개 = 상태창과 아이템 도감 */
+.facts{border:2px solid var(--ink);background:var(--paper);
+  box-shadow:4px 4px 0 rgba(27,35,51,.9);padding:4px 18px;margin-top:12px}
+.fact{grid-template-columns:96px 1fr;padding:14px 0;border-bottom:2px dashed rgba(27,35,51,.22)}
+.fact:last-child{border-bottom:none}
+.fact .fk{font-family:'DungGeunMo',var(--mono);font-size:13px;color:var(--blue)}
+.fact .fv{font-family:var(--serif);font-size:15.5px}
+.grp{margin-top:46px}
+.grp-list{border:none;display:flex;flex-direction:column;gap:8px}
+.grp-it{background:var(--paper);border:2px solid var(--ink);
+  box-shadow:3px 3px 0 rgba(27,35,51,.9);padding:9px 12px 9px 15px;
+  transition:transform .12s ease,box-shadow .12s ease}
+.grp-it.lk:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 rgba(27,35,51,.9)}
+.grp-it .tx{font-family:var(--serif);font-size:15px}
+.grp-it .arr{font-family:'DungGeunMo',var(--mono);font-size:12px}
+.stk{width:52px;height:52px;border:2px solid var(--ink);
+  box-shadow:2px 2px 0 rgba(27,35,51,.9);background:#fff}
+.grp-it:nth-child(odd) .stk,.grp-it:nth-child(even) .stk{transform:none}
+
+/* 방문록 = 대화 상자 */
+.gb-list{border:none;display:flex;flex-direction:column;gap:8px}
+.gb{background:var(--paper);border:2px solid var(--ink);
+  box-shadow:3px 3px 0 rgba(27,35,51,.9);padding:14px 16px}
+.gb .who{font-family:'DungGeunMo',var(--mono);font-size:12px;color:var(--blue)}
+.gb .msg{font-family:var(--serif)}
+.gbf input,.gbf textarea{background:var(--paper);border:2px solid var(--ink);
+  font-family:var(--serif);box-shadow:inset 2px 2px 0 rgba(27,35,51,.07)}
+.gbf input:focus,.gbf textarea:focus{border-color:var(--blue)}
+.gbf button{font-family:'DungGeunMo',var(--mono);font-size:15px;letter-spacing:.05em;
+  background:var(--blue);border:2px solid var(--ink);color:#fff;
+  padding:10px 26px;box-shadow:3px 3px 0 rgba(27,35,51,.9);
+  transition:transform .1s ease,box-shadow .1s ease,background .12s ease}
+.gbf button:hover{background:var(--blue2)}
+.gbf button:active{transform:translate(3px,3px);box-shadow:0 0 0 rgba(27,35,51,.9)}
+.hint{font-family:var(--serif)}
+
+/* 들판 아래 연락처 줄 */
+.pf-mini{margin-top:24px}
+.pf-mini a{font-family:'DungGeunMo',var(--mono);font-size:13px}
+
 @media(max-width:760px){
-  header{padding:24px 20px 16px;align-items:center;text-align:center}
-  header::after{left:20px;right:20px}
-  nav.top{gap:14px;font-size:10px;letter-spacing:.08em}
-  main{padding:38px 20px 72px}
-  footer{padding:17px 20px 43px;font-size:10px}
-  .profile{padding-top:24px}
-  .profile::before{content:"KIM WONHO / POETRY";display:block;margin-bottom:24px;color:var(--blue);font-family:var(--mono);font-size:10px;letter-spacing:.16em}
-  .pf-o{width:min(72vw,300px);height:min(88vw,360px);min-height:0;margin:0 0 62px 9px}
-  .pf-photo{border-radius:150px 150px 3px 3px;border-width:7px;box-shadow:13px 13px 0 rgba(13,50,117,.13)}
-  .r1{width:calc(100% + 24px);height:calc(100% + 24px)}
-  .r2{width:calc(100% + 48px);height:calc(100% + 48px)}
-  .r3{width:calc(100% + 72px);height:calc(100% + 72px)}
-  .pf-names{margin-bottom:48px}
-  .pf-name:first-child{font-size:34px;line-height:1.25;letter-spacing:-.06em;margin-bottom:6px}
-  .pf-name:nth-child(2){font-size:17px;color:var(--sub)}
-  .pf-name.latin{margin-top:18px;margin-bottom:0}
-  .pf-roles{margin-bottom:62px}
-  .pf-role{font-size:16px}
-  .pf-links{margin-top:22px}
-  .ghost{top:105px;right:2vw}
-  .row{grid-template-columns:1fr auto;gap:5px 14px;padding:17px 0}
-  .row .t{font-size:17px}
-  .w-title{font-size:26px}
-  .w-body.poem{font-size:17px}
-  .w-body.prose p{font-size:16px}
-  .fact{grid-template-columns:70px 1fr;gap:12px}
+  header{padding:20px 20px 12px}
+  main{padding:36px 20px 70px}
+  .reader{padding:30px 22px 40px}
+  footer{padding:14px 20px 30px;font-size:11px}
+  h1.page{font-size:22px}
+  .w-title{font-size:23px}
+  .row{padding:12px 13px}
+  .stk{width:44px;height:44px}
 }
 
 /* ── 영상 카드: 대문의 작은 활자 전시물 ───────────────── */
